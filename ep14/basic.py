@@ -1870,6 +1870,7 @@ BuiltInFunction.pop         = BuiltInFunction("pop")
 BuiltInFunction.extend      = BuiltInFunction("extend")
 BuiltInFunction.len					= BuiltInFunction("len")
 BuiltInFunction.run					= BuiltInFunction("run")
+BuiltInFunction.class					= BuiltInFunction("def")
 
 #######################################
 # CONTEXT
@@ -2182,7 +2183,8 @@ global_symbol_table.set("EXTEND", BuiltInFunction.extend)
 global_symbol_table.set("LEN", BuiltInFunction.len)
 global_symbol_table.set("RUN", BuiltInFunction.run)
 global_symbol_table.set("#INCLUDE", BuiltInFunction.import)
-global_symbol_table.set("$STRING", BuiltInFunction.python3)
+global_symbol_table.set("$STRING ", BuiltInFunction.python3)
+global_symbol_table.set("class", BuiltInFunction.class)
 
 def run(fn, text):
   # Generate tokens
