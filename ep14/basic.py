@@ -1853,8 +1853,10 @@ class BuiltInFunction(BaseFunction):
 
     return RTResult().success(Number.null)
   execute_run.arg_names = ["fn"]
-
+  
 BuiltInFunction.print       = BuiltInFunction("print")
+BuiltInFunction.python3     = BulitInFunction("")
+BuiltInFunction.import     = BulitInFunction("import")
 BuiltInFunction.print_ret   = BuiltInFunction("print_ret")
 BuiltInFunction.input       = BuiltInFunction("input")
 BuiltInFunction.input_int   = BuiltInFunction("input_int")
@@ -2179,6 +2181,8 @@ global_symbol_table.set("POP", BuiltInFunction.pop)
 global_symbol_table.set("EXTEND", BuiltInFunction.extend)
 global_symbol_table.set("LEN", BuiltInFunction.len)
 global_symbol_table.set("RUN", BuiltInFunction.run)
+global_symbol_table.set("#INCLUDE", BuiltInFunction.import)
+global_symbol_table.set("$STRING", BuiltInFunction.python3)
 
 def run(fn, text):
   # Generate tokens
